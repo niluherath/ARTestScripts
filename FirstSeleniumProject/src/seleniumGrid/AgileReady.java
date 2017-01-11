@@ -14,6 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,7 +31,8 @@ public static void main(String[] args) throws InterruptedException {
 	      	       	       
 		driver = new FirefoxDriver();
 		wait = new WebDriverWait(driver, 30);
-		driver.get("http://localhost:3000/");
+		driver.get("http://localhost:3000/");//dev environment
+		//driver.get("http://www.agileready.org:4000/");//test environment
 		driver.manage().window().maximize();
 		
 		Thread.sleep(5000);
@@ -44,6 +46,11 @@ public static void main(String[] args) throws InterruptedException {
 		
 		driver.findElement(By.xpath(".//*[@id='username']")).sendKeys("nellyherath@gmail.com");
 		
+		//driver.findElement(By.xpath(".//*[@id='username']")).sendKeys("niluherath@gmail.com");
+		
+		//driver.findElement(By.xpath(".//*[@id='username']")).sendKeys("niluherath@gmail.com");
+		
+				
 		driver.findElement(By.xpath(".//*[@id='password']")).sendKeys("chem4kids");
 		
 		//Thread.sleep(5000);
@@ -117,6 +124,8 @@ public static void main(String[] args) throws InterruptedException {
 		
 		String rowCinS = Integer.toString(rowCount);
 		
+		System.out.println("The row number is:" + rowCinS);
+		
 			
 		//click start button process
 		
@@ -137,116 +146,128 @@ public static void main(String[] args) throws InterruptedException {
 		//press next button
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question2
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 3
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 4
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 5
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 6
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 7
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 8 
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 9
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 10
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 11
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 12
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 13
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 14
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 15
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		//question 16
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
-		
+		Thread.sleep(3000);
 		
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div/div[1]/div/label")).click();
-		
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/div[2]/form/div[3]/div/div/button")).click();
 		
 		//evaluation stop
 		
 		//get row count
 		
-		List<WebElement> rows2 = driver.findElements(By.xpath("//table[@class='table table-hover table-striped']/tbody/tr"));
-		int rowCount2 = rows.size()-1;
-		
-		String rowCinS2 = Integer.toString(rowCount);
+			
+		Thread.sleep(5000);
+			
+		//close button		
+		driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/table/tbody[1]/tr["+rowCinS+"]/td[10]/p/button")).click();
 		
 		Thread.sleep(5000);
 		
-		driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/table/tbody[1]/tr["+rowCinS2+"]/td[10]/p/button")).click();
+		//click yes
 		
-		driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/table/tbody[1]/tr["+rowCinS2+"]/td[11]/p/button")).click();
+		driver.findElement(By.xpath(".//*[@id='WorkAround']/a")).click();
+					
+		Thread.sleep(5000);
 		
-	}
+		//click me for report
+		System.out.println("Coming upto here");
+		//driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/table/tbody[1]/tr["+rowCinS+"]/td[11]/p/button")).click();
+		Thread.sleep(5000);
+		WebElement webElement = driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/table/tbody[1]/tr["+rowCinS+"]/td[11]/p/button"));
+	    webElement.click(); 				
+		
+		
+	
+		}
 	
 }
