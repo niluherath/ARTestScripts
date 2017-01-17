@@ -55,8 +55,40 @@ public class ARTestLoginVerification {
 		
 	}
 	
+	@Test
+	public void testInValidUserCredentials() throws InterruptedException {
+				
+		driver.get("http://localhost:3000/");
+		driver.manage().window().maximize();
+		
+		Thread.sleep(5000);
+		//login button
+		
+		driver.findElement(By.xpath(".//*[@id='navbar-brand-centered']/ul/li[4]/a")).click();
+		
+		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath(".//*[@id='username']")).sendKeys("nellyherath@gmail.com");
+		
+		driver.findElement(By.xpath(".//*[@id='password']")).sendKeys("chemkids");
+		
+		driver.findElement(By.xpath(".//*[@id='login_button']")).click();
+		
+		Thread.sleep(5000);
+		
+		//login error message close button
+		
+		WebElement element1 = driver.findElement(By.xpath(".//*[@id='LoginErrorDialog']/div/div/div[3]/button"));
+		
+		Assert.assertNotNull(element1);
+		
+	}
+	
+	
+	
 	@After
 	public void tearDown() throws Exception {
+		driver.quit();
 	}
 
 }
