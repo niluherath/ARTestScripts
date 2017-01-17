@@ -1,33 +1,26 @@
 package seleniumGrid;
 
+import static org.junit.Assert.*;
+
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
-/*
- * AgileReadyFreeEvaluation class has code scripts to automate testing for a free evaluation for a single person.
- * Date : 12/12/2016
- * Developer : Nilu Herath
- * Project : AgileReady
- *
- */
-
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AgileReady {
-	
-public static void main(String[] args) throws InterruptedException {
+public class TestScoreOnePerson {
+	WebDriver driver;
+	@Before
+	public void setUp() throws Exception {
 		
-		WebDriver driver;
 	    Wait<WebDriver> wait;
 
 		
@@ -268,21 +261,35 @@ public static void main(String[] args) throws InterruptedException {
 		//driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/table/tbody[1]/tr["+rowCinS+"]/td[11]/p/button")).click();
 		Thread.sleep(5000);
 		WebElement webElement = driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/table/tbody[1]/tr["+rowCinS+"]/td[11]/p/button"));
-	    webElement.click(); 
-	    
-	    Thread.sleep(5000);
-	    
-	    //driver.findElement(By.xpath("html/body/div[1]/div[2]/div[4]/div/div[1]/h4/b"));
-	    								    
-	    //WebDriverWait wait1 = new WebDriverWait(driver, 5);
-	    //WebElement web2 = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div[2]/div[4]/div/div[1]/h4/b")));		
-	   // String score = web2.getAttribute("value");
-	    //System.out.println("The value of the score is:"+ score);
-	    
-	    //driver.findElement(By.xpath("//*[@ng-binding='Member Agility : 37% ']"));
-	    
-	    //WebElement el2 = driver.findElement(By.xpath("html/body/div[1]/div[2]/div[4]/div/div[1]/h4/b"));
-	    
-	   
+	    webElement.click(); 	
+	}
+
+	
+
+	@Test
+	public void test() throws InterruptedException {
+		//fail("Not yet implemented");
+		
+		Thread.sleep(5000);
+		//WebElement web2 = driver.findElement(By.xpath("html/body/div[1]/div[2]/div[4]/div/div[1]/h4/b"));
+		//String score = web2.getAttribute("value");
+		//System.out.println("The score is:" + score);		
+		//assertEquals("Member Agility:37%",score);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		String score = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div[2]/div[4]/div/div[1]/h4/b"))).getAttribute("value");
+		System.out.println("The score is:" + score);		
+		assertEquals("Member Agility:37%",score);
+		
+		//<li class="ng-scope" role="menuitem" ng-click="showAlerts(category.name)" ng-repeat="category in categories" style="">
+	    //<span class="cat-name ng-binding">conservation </span>
+	  //  <div class="count ng-binding">44</div>
+	//</li>
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		
+		driver.close();
 	}
 }
