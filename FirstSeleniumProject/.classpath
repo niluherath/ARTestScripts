@@ -38,5 +38,7 @@
 	<classpathentry kind="lib" path="C:/Selenium/selenium-java-3.0.1/client-combined-3.0.1-nodeps.jar"/>
 	<classpathentry kind="lib" path="C:/Selenium/junit-4.10.jar"/>
 	<classpathentry kind="lib" path="C:/downloads/geckodriver-v0.11.1-win64.zip"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/AgileReady/testng-6.9.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
